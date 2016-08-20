@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flight data visualization</title>
+	<script src="three.min.js"></script>
+	<script src="globe.js"></script>
+</head>
+<body>
+<div id='container' />
+
+<script>
+
+	var container = document.getElementById( 'container' );
+
+	var globe = new DAT.Globe( container );
+
+	var xhr = new XMLHttpRequest();
+
+	xhr.open( 'GET', 'data.json', true );
+
+	xhr.onreadystatechange = function() {
+
+		if ( xhr.readyState === 4 && xhr.status === 200 ) {
+
+			var data = JSON.parse( xhr.responseText );
+
+			for ( var i = 0; i < data.length; i ++ ) {
+
+
+				globe.addData(data[i][1], {'format': 'magnitude'});
+			}
+
+			globe.createPoints();
+
+			globe.animate();
+
+		}
+	};
+
+	xhr.send( null );
+</script>
+</body>
+</html>
