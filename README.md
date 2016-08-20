@@ -4,4 +4,4 @@ This is a data visulization of all Ferrari in the U.S
 
 Here are two samples how the results look like:
 
-![image](http://github.com/davidliujiafeng/readme/raw/master/images/nongshalie.jpg)
+![image](http://github.com/davidliujiafeng/readme/Data-visulization-ferrari-in-U.S./Sample_image/Screen Shot 2016-08-20 at 17.22.11.png)
